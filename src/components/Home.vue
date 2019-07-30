@@ -1,7 +1,5 @@
 <template>
-  <p class="homeText">
-    Port Glasgow Curling Club
-  </p>
+  <p class="homeText">Port Glasgow Curling Club</p>
 </template>
 <script>
 export default {
@@ -9,12 +7,12 @@ export default {
 };
 </script>
 <style scoped>
-.homeText{
-    font-size: 35px;
-    color: red;
-    text-align: center;
-    position: relative;
-    top:30px;
-    text-shadow: 2px 2px 2px gray;
+.homeText {
+  font-size: 35px;
+  color: red;
+  text-align: center;
+  position: relative;
+  top: 30px;
+  text-shadow: 2px 2px 2px gray;
 }
 </style>
