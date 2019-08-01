@@ -24,7 +24,7 @@
           right
         >
           <b-dropdown-item href="#">Old Results</b-dropdown-item>
-          <b-dropdown-item href="#">Winning Rinks</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
           <b-dropdown-item href="#">Photo Gallery</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item href="#">Merchandise</b-nav-item>
@@ -41,7 +41,13 @@
         <img
           id="logo"
           src="./../assets/Logo-Small.png"
-          alt="PGCC"/>
+          alt="PGCC"
+          class="d-none d-lg-inline-block"/>
+        <img
+          id="logo"
+          src="./../assets/Logo-X-Small.png"
+          alt="PGCC"
+          class="d-lg-none"/>
       </b-col>
     </b-row>
     <b-row>
