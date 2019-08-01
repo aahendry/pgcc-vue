@@ -3,10 +3,26 @@
     <b-row>
       <b-col lg="8" md="12">
         <h3>News</h3>
-        <ul>
-          <li><p>01/01/2001 - News 2</p></li>
-          <li><p>01/01/2000 - News 1</p></li>
-        </ul>
+        <b-row>
+          <b-col v-for="newsItem in newsItems" :key="newsItem.id" sm="12" md="6">
+            <b-card
+              style="max-width: 40rem;"
+              class="mb-2"
+        >
+        <b-card-title>{{newsItem.title}}</b-card-title>
+        <b-card-sub-title class="mb-2">{{newsItem.when | short-date}}
+           <b-badge
+            variant="success"
+             v-if="newsItem.new">
+             New
+             </b-badge>
+           </b-card-sub-title>
+          <b-card-text>
+            <p>{{newsItem.text}}</p>
+          </b-card-text>
+        </b-card>
+          </b-col>
+        </b-row>
       </b-col>
       <b-col lg="4" md="12">
         <h3>About PGCC</h3>
@@ -15,13 +31,40 @@
         <p>Part of the Renfrewshire (12th) province of Area 3,
            the club plays the majority of games at the Waterfront Leisure Complex
             curling rink in Greenock.</p>
+            <p>
+              <a
+              href="https://en.wikipedia.org/wiki/Port_Glasgow_Curling_Club"
+              target="_blank">Wikipedia</a>
+              </p>
+            <p>
+              <a
+              href="http://rcccmembers.org/index.php?CLUB_NO=472&CATEGORY=1-Membership&SC=Club&FUNCTIONS=2"
+              target="_blank">RCCC Contact Info</a>
+              </p>
       </b-col>
     </b-row>
   </b-container>
 </template>
 <script>
+import NewsService from '@/services/news.service';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  data() {
+    return {
+      newsItems: []
+    };
+  },
+  created() {
+    NewsService.getAll().then((response) => {
+      this.newsItems = response.data;
+      // Set property for badge visibility
+      this.newsItems.forEach((o) => {
+        o.new = (new Date(o.when).getTime()) // eslint-disable-line no-param-reassign
+        > (Date.now() - (1000 * 60 * 60 * 24 * 7));
+      });
+    });
+  }
 };
 </script>
 <style scoped>
@@ -33,7 +76,7 @@ export default {
   top: 10px;
   text-shadow: 2px 2px 2px gray;
 }
-p {
+p, h4, h6 {
   text-align: justify;
 }
 

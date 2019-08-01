@@ -1,7 +1,7 @@
 <template>
     <b-container>
   <b-navbar id="navbar" toggleable="lg" type="dark">
-    <b-navbar-brand href="#">PGCC</b-navbar-brand>
+    <b-navbar-brand :to="{ name: 'Home' }">PGCC</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -38,12 +38,10 @@
     <b-container>
     <b-row>
       <b-col>
-        <a href="#/">
-          <img
+        <img
           id="logo"
           src="./../assets/Logo-Small.png"
           alt="PGCC"/>
-        </a>
       </b-col>
     </b-row>
     <b-row>
