@@ -2,211 +2,47 @@
   <b-container>
     <b-row>
       <b-col>
-        <h3>Rinks</h3>
+        <h3>Gourdie Rinks</h3>
       </b-col>
     </b-row>
     <b-row>
-      <b-col sm="12" md="6" lg="3">
+      <b-col v-for="rink in gourdieRinks" :key="rink.id" sm="12" md="6" lg="3">
         <b-card
-        title="Team Service"
           style="max-width: 20rem;"
           class="mb-2"
           img-src="https://placekitten.com/400/200"
           img-alt="Image"
           img-top
         >
+          <b-card-title>{{rink.skip}}</b-card-title>
           <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
+            <p>{{rink.third}}</p>
+            <p>{{rink.second}}</p>
+            <p>{{rink.lead}}</p>
           </b-card-text>
         </b-card>
       </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Hendry"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/400/201"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
+    </b-row>
+    <hr/>
+    <b-row>
+      <b-col>
+        <h3>Derby Rinks</h3>
       </b-col>
-      <b-col sm="12" md="6" lg="3">
+    </b-row>
+    <b-row>
+      <b-col v-for="rink in derbyRinks" :key="rink.id" sm="12" md="6" lg="3">
         <b-card
-          title="Gray"
           style="max-width: 20rem;"
           class="mb-2"
-          img-src="https://placekitten.com/401/201"
+          img-src="https://placekitten.com/600/300"
           img-alt="Image"
           img-top
         >
+          <b-card-title>{{rink.skip}}</b-card-title>
           <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Boyd"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/401/200"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-        title="Team Service"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/400/200"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Hendry"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/400/201"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Gray"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/401/201"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Boyd"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/401/200"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-        title="Team Service"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/400/200"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Hendry"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/400/201"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Gray"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/401/201"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
-          </b-card-text>
-        </b-card>
-      </b-col>
-      <b-col sm="12" md="6" lg="3">
-        <b-card
-          title="Boyd"
-          style="max-width: 20rem;"
-          class="mb-2"
-          img-src="https://placekitten.com/401/200"
-          img-alt="Image"
-          img-top
-        >
-          <b-card-text>
-            <p>Player 1</p>
-            <p>Player 2</p>
-            <p>Player 3</p>
-            <p>Player 4</p>
+            <p>{{rink.third}}</p>
+            <p>{{rink.second}}</p>
+            <p>{{rink.lead}}</p>
           </b-card-text>
         </b-card>
       </b-col>
@@ -214,8 +50,24 @@
   </b-container>
 </template>
 <script>
+import RinkService from '@/services/rink.service';
+
 export default {
-  name: 'Home'
+  name: 'Rinks',
+  data() {
+    return {
+      gourdieRinks: [],
+      derbyRinks: []
+    };
+  },
+  created() {
+    RinkService.getAll('gourdie').then((response) => {
+      this.gourdieRinks = response.data;
+    });
+    RinkService.getAll('derby').then((response) => {
+      this.derbyRinks = response.data;
+    });
+  }
 };
 </script>
 <style scoped>

@@ -60,8 +60,7 @@ export default {
       this.newsItems = response.data;
       // Set property for badge visibility
       this.newsItems.forEach((o) => {
-        o.new = (new Date(o.when).getTime()) // eslint-disable-line no-param-reassign
-        > (Date.now() - (1000 * 60 * 60 * 24 * 7));
+        o.new = (new Date(o.when).getTime()) > (Date.now() - (1000 * 60 * 60 * 24 * 7)); // eslint-disable-line no-param-reassign
       });
     });
   }
