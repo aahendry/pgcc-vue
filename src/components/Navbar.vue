@@ -1,7 +1,7 @@
 <template>
     <b-container>
   <b-navbar id="navbar" toggleable="lg" type="dark">
-
+    <b-navbar-brand href="#">PGCC</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -78,8 +78,5 @@ export default {
   display: block;
   position: relative;
   --top: 60px;
-}
-.dropdown-menu {
-  background-color: #345471;
 }
 </style>

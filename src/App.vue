@@ -32,4 +32,7 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+h3 {
+  padding-bottom: 10px;
+}
 </style>

@@ -6,8 +6,7 @@
       </b-col>
     </b-row>
     <b-row>
-      <b-col>
-        <b-card-group deck>
+      <b-col sm="12" md="6" lg="3">
         <b-card
         title="Team Service"
           style="max-width: 20rem;"
@@ -23,6 +22,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Hendry"
           style="max-width: 20rem;"
@@ -38,6 +39,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Gray"
           style="max-width: 20rem;"
@@ -53,6 +56,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Boyd"
           style="max-width: 20rem;"
@@ -68,8 +73,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
-        </b-card-group>
-        <b-card-group deck>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
         title="Team Service"
           style="max-width: 20rem;"
@@ -85,6 +90,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Hendry"
           style="max-width: 20rem;"
@@ -100,6 +107,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Gray"
           style="max-width: 20rem;"
@@ -115,6 +124,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Boyd"
           style="max-width: 20rem;"
@@ -130,8 +141,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
-        </b-card-group>
-        <b-card-group deck>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
         title="Team Service"
           style="max-width: 20rem;"
@@ -147,6 +158,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Hendry"
           style="max-width: 20rem;"
@@ -162,6 +175,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Gray"
           style="max-width: 20rem;"
@@ -177,6 +192,8 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
+      </b-col>
+      <b-col sm="12" md="6" lg="3">
         <b-card
           title="Boyd"
           style="max-width: 20rem;"
@@ -192,7 +209,6 @@
             <p>Player 4</p>
           </b-card-text>
         </b-card>
-        </b-card-group>
       </b-col>
     </b-row>
   </b-container>
