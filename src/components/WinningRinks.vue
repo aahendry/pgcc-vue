@@ -7,29 +7,44 @@
     </b-row>
     <b-row>
       <b-col>
-        <b-table striped hover :items="gourdieRinks" small></b-table>
+        <b-table striped hover :items="gourdieRinks" :fields="tableFields" small></b-table>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <h3>Derby Trophy</h3>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <b-table striped hover :items="derbyRinks" :fields="tableFields" small></b-table>
       </b-col>
     </b-row>
   </b-container>
 </template>
 
 <script>
-// import WinningRinkService from '@/services/winning-rink.service';
+import RinkService from '@/services/rink.service';
 
 export default {
-  name: 'Rinks',
+  name: 'Winning Rinks',
   data() {
     return {
-      gourdieRinks: []
+      tableFields: [],
+      gourdieRinks: [],
+      derbyRinks: []
     };
   },
   created() {
-    this.gourdieRinks = [
-      { year: '2017/2018', skip: 'R Goodall', third: 'D Gourdie', second: 'P Fraser', lead: 'C McNeil' }
-    ];
-    // WinningRinkService.getAll('gourdie').then((response) => {
-    //   this.gourdieRinks = response.data;
-    // });
+    this.tableFields = ['season', 'skip', 'third', 'second', 'lead'];
+
+    RinkService.getAllWinning('gourdie').then((response) => {
+      this.gourdieRinks = response.data;
+    });
+
+    RinkService.getAllWinning('derby').then((response) => {
+      this.derbyRinks = response.data;
+    });
   }
 };
 </script>
