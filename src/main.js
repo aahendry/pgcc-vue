@@ -4,7 +4,7 @@ import Axios from 'axios';
 import BootstrapVue from 'bootstrap-vue';
 import Vue from 'vue';
 import App from './App';
-import router from './router';
+import { router } from './router';
 import ShortDateFilter from './filters/short-date';
 
 Vue.config.productionTip = false;

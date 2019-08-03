@@ -1,0 +1,13 @@
+// eslint-disable-next-line import/prefer-default-export
+export const AuthHeader = {
+  authHeader() {
+    // return authorization header with jwt token
+    const user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && user.token) {
+      return { Authorization: `Bearer ${user.token}` };
+    }
+
+    return {};
+  }
+};
