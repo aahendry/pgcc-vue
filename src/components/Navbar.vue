@@ -31,7 +31,17 @@
         <b-nav-item href="http://pgcc-reserves.net46.net" target="_blank">Reserve System</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="#">Login</b-nav-item>
+        <b-nav-item :to="{ name: 'Login' }" v-show="!IsLoggedIn">Login</b-nav-item>
+        <b-nav-item-dropdown
+          id="nav-dropdown-admin"
+          text="Admin"
+          toggle-class="nav-link-custom"
+          right
+          v-show="IsLoggedIn"
+        >
+          <b-dropdown-item href="#">Some Admin Page</b-dropdown-item>
+          <b-dropdown-item @click.prevent="logout">Logout</b-dropdown-item>
+        </b-nav-item-dropdown>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -60,8 +70,32 @@
   </b-container>
 </template>
 <script>
+import { AuthService } from '@/services/auth.service';
+import { router } from '../router';
+
 export default {
-  name: 'Navbar'
+  name: 'Navbar',
+  data() {
+    return {
+      IsLoggedIn: this.CheckIfIsLoggedIn()
+    };
+  },
+  created() {
+    this.$bus.$on('logged', () => {
+      this.IsLoggedIn = this.CheckIfIsLoggedIn();
+    });
+  },
+  methods: {
+    logout() {
+      AuthService.logout();
+      this.$bus.$emit('logged', 'User logged out');
+      router.push('/');
+    },
+    CheckIfIsLoggedIn() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      return user && user.token;
+    }
+  }
 };
 </script>
 <style>

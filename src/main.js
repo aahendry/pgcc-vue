@@ -4,10 +4,13 @@ import Axios from 'axios';
 import BootstrapVue from 'bootstrap-vue';
 import Vue from 'vue';
 import App from './App';
+import EventBus from './EventBus';
 import { router } from './router';
 import ShortDateFilter from './filters/short-date';
 
 Vue.config.productionTip = false;
+
+Vue.prototype.$bus = EventBus;
 
 Axios.defaults.baseURL = process.env.API_ENDPOINT;
 

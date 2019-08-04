@@ -1,10 +1,16 @@
 <template>
-  <div>
-    <div class="alert alert-info">
-      Username: test
-      <br />Password: test
-    </div>
+  <b-container>
+    <b-row>
+      <b-col md="6" sm="12">
+        <div class="alert alert-info">
+          <h4>To continue, please login.</h4>
+        </div>
+      </b-col>
+      <b-col md="6" sm="12">
     <h2>Login</h2>
+    <div class="alert alert-danger" v-show="showError">
+      Login Failed!
+    </div>
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
         <label for="username">Username</label>
@@ -32,7 +38,9 @@
         <button class="btn btn-primary">Login</button>
       </div>
     </form>
-  </div>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
@@ -44,7 +52,8 @@ export default {
     return {
       username: '',
       password: '',
-      submitted: false
+      submitted: false,
+      showError: false
     };
   },
   methods: {
@@ -54,12 +63,31 @@ export default {
       if (username && password) {
         AuthService.login(username, password).then(
           () => {
+            this.$bus.$emit('logged', 'User logged in');
+            this.showError = false;
             router.push('/');
           },
-          () => {}
+          () => {
+            this.showError = true;
+          }
         );
       }
     }
   }
 };
 </script>
+
+<style scoped>
+.homeText {
+  font-size: 35px;
+  color: #345471;
+  text-align: center;
+  position: relative;
+  top: 10px;
+  text-shadow: 2px 2px 2px gray;
+}
+label {
+  text-align: left;
+}
+
+</style>

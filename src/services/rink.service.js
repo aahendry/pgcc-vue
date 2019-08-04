@@ -1,5 +1,5 @@
 import Axios from 'axios';
-import { AuthHeader } from '../helpers/auth-header';
+import { authHeader } from '../helpers/auth-header';
 import { AuthService } from './auth.service';
 
 const RESOURCE_NAME = '/rinks';
@@ -12,10 +12,13 @@ export default {
   getAllWinning(competition) {
     const requestOptions = {
       method: 'GET',
-      headers: AuthHeader()
+      headers: authHeader()
     };
 
     return Axios.get(`${RESOURCE_NAME}/winning/?competition=${competition}`, requestOptions)
-      .then(AuthService.handleResponse);
+      .then((x) => {
+        AuthService.handleResponse(x);
+        return x;
+      });
   }
 };
