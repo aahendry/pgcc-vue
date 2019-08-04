@@ -39,7 +39,7 @@
           right
           v-show="IsLoggedIn"
         >
-          <b-dropdown-item href="#">Some Admin Page</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'Admin' }">Admin Page</b-dropdown-item>
           <b-dropdown-item @click.prevent="logout">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

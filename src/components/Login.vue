@@ -65,7 +65,7 @@ export default {
           () => {
             this.$bus.$emit('logged', 'User logged in');
             this.showError = false;
-            router.push('/');
+            router.push('/admin');
           },
           () => {
             this.showError = true;

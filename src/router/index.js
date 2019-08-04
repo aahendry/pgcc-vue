@@ -4,6 +4,7 @@ import Home from '@/components/Home';
 import Rinks from '@/components/Rinks';
 import WinningRinks from '@/components/WinningRinks';
 import Login from '@/components/Login';
+import Admin from '@/components/Admin';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -33,6 +34,11 @@ export const router = new Router({
       component: Login
     },
     {
+      path: '/admin',
+      name: 'Admin',
+      component: Admin
+    },
+    {
       path: '*',
       name: 'NotFound',
       component: NotFound
@@ -43,7 +49,7 @@ export const router = new Router({
 // eslint-disable-next-line consistent-return
 router.beforeEach((to, from, next) => {
   // redirect to login page if not logged in and trying to access a restricted page
-  const privatePages = ['/winning-rinks'];
+  const privatePages = ['/admin'];
   const authRequired = privatePages.includes(to.path);
   const loggedIn = localStorage.getItem('user');
 
