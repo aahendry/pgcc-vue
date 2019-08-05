@@ -4,7 +4,8 @@ import Home from '@/components/Home';
 import Rinks from '@/components/Rinks';
 import WinningRinks from '@/components/WinningRinks';
 import Login from '@/components/Login';
-import Admin from '@/components/Admin';
+import Admin from '@/components/admin/Admin';
+import AdminNews from '@/components/admin/AdminNews';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -37,6 +38,11 @@ export const router = new Router({
       path: '/admin',
       name: 'Admin',
       component: Admin
+    },
+    {
+      path: '/admin/news',
+      name: 'AdminNews',
+      component: AdminNews
     },
     {
       path: '*',

@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col>
-        <h3>Admin Page</h3>
+        <h3>Administration Page</h3>
         <p>This section is only accessible to logged-in users.</p>
       </b-col>
     </b-row>
