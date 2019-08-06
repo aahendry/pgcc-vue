@@ -6,6 +6,16 @@
       </b-col>
     </b-row>
     <b-row>
+      <b-col
+        md="2"
+        offset-md="10">
+        <b-button
+          variant="info"
+          :to="{ name: 'AdminNewsCreate' }">Create news item</b-button>
+      </b-col>
+    </b-row>
+    <br/>
+    <b-row>
       <b-col md="12">
         <div class="table-responsive">
           <table class="table table-striped">

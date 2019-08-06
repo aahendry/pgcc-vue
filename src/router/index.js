@@ -6,6 +6,7 @@ import WinningRinks from '@/components/WinningRinks';
 import Login from '@/components/Login';
 import Admin from '@/components/admin/Admin';
 import AdminNews from '@/components/admin/AdminNews';
+import AdminNewsCreate from '@/components/admin/AdminNewsCreate';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -43,6 +44,11 @@ export const router = new Router({
       path: '/admin/news',
       name: 'AdminNews',
       component: AdminNews
+    },
+    {
+      path: '/admin/news/create',
+      name: 'AdminNewsCreate',
+      component: AdminNewsCreate
     },
     {
       path: '*',
