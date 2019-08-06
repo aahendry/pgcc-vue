@@ -2,6 +2,12 @@
   <b-container>
     <b-row>
       <b-col>
+        <h3>Winning Rinks</h3>
+      </b-col>
+    </b-row>
+    <hr/>
+    <b-row>
+      <b-col>
         <h3>Gourdie Trophy</h3>
       </b-col>
     </b-row>

@@ -20,42 +20,81 @@
               </tr>
             </thead>
             <tbody>
-              <tr
-                v-for="newsItem in newsItems"
-                :key="newsItem.id">
-                <td>{{ newsItem.when }}</td>
-                <td>{{ newsItem.title }}</td>
-                <td>{{ newsItem.text }}</td>
-                <td>{{ newsItem.isVisible }}</td>
-                <td>
-                  <b-button variant="success">Update</b-button>
-                </td>
-                <td>
-                  <b-button variant="danger">Delete</b-button>
-                </td>
-              </tr>
+              <admin-news-row
+              v-for="newsItem in newsItems"
+              :key="newsItem.id"
+              :newsItem="newsItem"
+              @update="updateNewsItem"
+              @delete="deleteNewsItem"/>
             </tbody>
           </table>
         </div>
       </b-col>
     </b-row>
+    <b-modal
+      ref="deleteConfirmModal"
+      title="Confirm your action"
+      @ok="onDeleteConfirm"
+      @hide="onDeleteModalHide">
+      <p class="my-4">Are you sure you want to delete this news item?</p>
+    </b-modal>
+    <b-modal
+      ref="alertModal"
+      :title="alertModalTitle"
+      :ok-only="true">
+      <p class="my-4">{{ alertModalContent }}</p>
+    </b-modal>
   </b-container>
 </template>
 
 <script>
 import NewsService from '@/services/news.service';
+import AdminNewsRow from '@/components/admin/AdminNewsRow';
 
 export default {
   name: 'Admin News',
+  components: {
+    'admin-news-row': AdminNewsRow
+  },
   data() {
     return {
-      newsItems: []
+      newsItems: [],
+      selectedNewsItemId: null,
+      alertModalTitle: '',
+      alertModalContent: ''
     };
   },
   created() {
-    NewsService.getAll().then((response) => {
-      this.newsItems = response.data;
-    });
+    this.fetchNewsItems();
+  },
+  methods: {
+    updateNewsItem(newsItemId) {
+      console.log('update', newsItemId);
+    },
+    deleteNewsItem(newsItemId) {
+      this.selectedNewsItemId = newsItemId;
+      this.$refs.deleteConfirmModal.show();
+    },
+    fetchNewsItems() {
+      NewsService.getAll().then((response) => {
+        this.newsItems = response.data;
+      });
+    },
+    onDeleteConfirm() {
+      NewsService.delete(this.selectedNewsItemId).then(() => {
+        this.alertModalTitle = 'Success';
+        this.alertModalContent = 'Successfully deleted news item';
+        this.$refs.alertModal.show();
+        this.fetchNewsItems();
+      }).catch((error) => {
+        this.alertModalTitle = 'Error';
+        this.alertModalContent = error.response.data;
+        this.$refs.alertModal.show();
+      });
+    },
+    onDeleteModalHide() {
+      this.selectedNewsItemId = null;
+    }
   }
 };
 </script>
