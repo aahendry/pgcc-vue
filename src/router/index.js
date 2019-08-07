@@ -7,6 +7,7 @@ import Login from '@/components/Login';
 import Admin from '@/components/admin/Admin';
 import AdminNews from '@/components/admin/AdminNews';
 import AdminNewsCreate from '@/components/admin/AdminNewsCreate';
+import AdminNewsUpdate from '@/components/admin/AdminNewsUpdate';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -49,6 +50,11 @@ export const router = new Router({
       path: '/admin/news/create',
       name: 'AdminNewsCreate',
       component: AdminNewsCreate
+    },
+    {
+      path: '/admin/news/update/:id',
+      name: 'AdminNewsUpdate',
+      component: AdminNewsUpdate
     },
     {
       path: '*',

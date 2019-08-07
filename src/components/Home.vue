@@ -56,7 +56,7 @@ export default {
     };
   },
   created() {
-    NewsService.getAll().then((response) => {
+    NewsService.getAllVisible().then((response) => {
       this.newsItems = response.data;
       // Set property for badge visibility
       this.newsItems.forEach((o) => {

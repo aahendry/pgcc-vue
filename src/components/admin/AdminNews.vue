@@ -79,7 +79,7 @@ export default {
   },
   methods: {
     updateNewsItem(newsItemId) {
-      console.log('update', newsItemId);
+      this.$router.push({ name: 'AdminNewsUpdate', params: { id: newsItemId } });
     },
     deleteNewsItem(newsItemId) {
       this.selectedNewsItemId = newsItemId;

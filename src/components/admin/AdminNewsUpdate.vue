@@ -2,11 +2,11 @@
   <b-container fluid>
     <b-row>
       <b-col>
-        <h3>Create News Item</h3>
+        <h3>Update News Item</h3>
       </b-col>
     </b-row>
     <div class="form-wrapper">
-      <b-form @submit.prevent="createNewsItem">
+      <b-form @submit.prevent="updateNewsItem">
         <b-form-group
           :label-cols="2"
           breakpoint="md"
@@ -76,32 +76,37 @@
 import NewsService from '@/services/news.service';
 
 export default {
-  name: 'AdminNewsCreate',
+  name: 'AdminNewsUpdate',
   data() {
     return {
       formData: {
         title: '',
         text: '',
-        isVisible: true
+        isVisible: true,
+        when: '',
+        id: 0
       },
       alertModalTitle: '',
       alertModalContent: '',
       isSuccessful: false
     };
   },
+  created() {
+    NewsService.get(this.$router.currentRoute.params.id).then((response) => {
+      this.formData.title = response.data.title;
+      this.formData.text = response.data.text;
+      this.formData.isVisible = response.data.isVisible;
+      this.formData.when = response.data.when;
+      this.formData.id = response.data.id;
+    });
+  },
   methods: {
-    createNewsItem() {
-      NewsService.create(this.formData).then(() => {
+    updateNewsItem() {
+      NewsService.update(this.$router.currentRoute.params.id, this.formData).then(() => {
         this.isSuccessful = true;
         this.alertModalTitle = 'Success';
-        this.alertModalContent = 'Successfully created news item';
+        this.alertModalContent = 'Successfully updated news item';
         this.$refs.alertModal.show();
-
-        this.formData = {
-          title: '',
-          text: '',
-          isVisible: true
-        };
       }).catch((error) => {
         this.isSuccessful = false;
         this.alertModalTitle = 'Error';
