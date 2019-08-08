@@ -1,20 +1,11 @@
 import Axios from 'axios';
-import { AuthService } from './auth.service';
 import { authHeader } from '../helpers/auth-header';
 
-const RESOURCE_NAME = '/rinks';
+const RESOURCE_NAME = '/competitions';
 
 export default {
-  getAll(competition, season) {
-    return Axios.get(`${RESOURCE_NAME}/?competitionId=${competition || ''}&seasonId=${season || ''}`);
-  },
-
-  getAllWinning(competition) {
-    return Axios.get(`${RESOURCE_NAME}/winning/?competition=${competition}`)
-      .then((x) => {
-        AuthService.handleResponse(x);
-        return x;
-      });
+  getAll() {
+    return Axios.get(RESOURCE_NAME);
   },
   get(id) {
     const requestOptions = {
