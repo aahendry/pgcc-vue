@@ -67,14 +67,6 @@ export default {
 };
 </script>
 <style scoped>
-.homeText {
-  font-size: 35px;
-  color: #345471;
-  text-align: center;
-  position: relative;
-  top: 10px;
-  text-shadow: 2px 2px 2px gray;
-}
 p, h4, h6 {
   text-align: justify;
 }

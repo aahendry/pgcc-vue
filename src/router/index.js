@@ -4,6 +4,8 @@ import { AuthService } from '@/services/auth.service';
 import Home from '@/components/Home';
 import Rinks from '@/components/Rinks';
 import WinningRinks from '@/components/WinningRinks';
+import Table from '@/components/Table';
+import Merchandise from '@/components/Merchandise';
 import Login from '@/components/Login';
 import Admin from '@/components/admin/Admin';
 import AdminNews from '@/components/admin/AdminNews';
@@ -34,6 +36,16 @@ export const router = new Router({
       path: '/winning-rinks',
       name: 'WinningRinks',
       component: WinningRinks
+    },
+    {
+      path: '/table',
+      name: 'Table',
+      component: Table
+    },
+    {
+      path: '/merchandise',
+      name: 'Merchandise',
+      component: Merchandise
     },
     {
       path: '/login',
@@ -116,7 +128,7 @@ router.beforeEach((to, from, next) => {
       loggedIn = true;
     } else {
       AuthService.logout();
-      this.$bus.$emit('logged', 'User logged out');
+      // this.$bus.$emit('logged', 'User logged out');
     }
   }
 

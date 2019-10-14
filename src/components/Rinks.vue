@@ -115,14 +115,6 @@ export default {
 };
 </script>
 <style scoped>
-.homeText {
-  font-size: 35px;
-  color: #345471;
-  text-align: center;
-  position: relative;
-  top: 10px;
-  text-shadow: 2px 2px 2px gray;
-}
 h3 {
   padding-bottom: 20px;
 }

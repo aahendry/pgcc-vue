@@ -14,7 +14,7 @@
           right
         >
           <b-dropdown-item href="#">Fixtures & Results</b-dropdown-item>
-          <b-dropdown-item href="#">Gourdie Table</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'Table' }">Gourdie Table</b-dropdown-item>
           <b-dropdown-item href="#">Derby Table</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown
@@ -27,7 +27,7 @@
           <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
           <b-dropdown-item href="#">Photo Gallery</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item href="#">Merchandise</b-nav-item>
+        <b-nav-item :to="{ name: 'Merchandise' }">Merchandise</b-nav-item>
         <b-nav-item href="http://pgcc-reserves.net46.net" target="_blank">Reserve System</b-nav-item>
       </b-navbar-nav>
       <b-navbar-nav class="ml-auto">
@@ -100,7 +100,7 @@ export default {
   }
 };
 </script>
-<style>
+<style scoped>
 .homeText {
   font-size: 35px;
   color: #345471;
