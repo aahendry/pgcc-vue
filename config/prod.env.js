@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  API_ENDPOINT: '"https://api.portglasgowcurlingclub.co.uk"'
+  API_ENDPOINT: '"https://api.portglasgowcurlingclub.co.uk/api"'
 }
