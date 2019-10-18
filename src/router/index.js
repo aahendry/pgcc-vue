@@ -6,11 +6,13 @@ import Rinks from '@/components/Rinks';
 import WinningRinks from '@/components/WinningRinks';
 import Table from '@/components/Table';
 import Merchandise from '@/components/Merchandise';
+import Contact from '@/components/Contact';
 import Login from '@/components/Login';
 import Admin from '@/components/admin/Admin';
 import AdminNews from '@/components/admin/AdminNews';
 import AdminNewsCreate from '@/components/admin/AdminNewsCreate';
 import AdminNewsUpdate from '@/components/admin/AdminNewsUpdate';
+import AdminEnquiry from '@/components/admin/AdminEnquiry';
 import AdminRinks from '@/components/admin/AdminRinks';
 import AdminRinkCreate from '@/components/admin/AdminRinkCreate';
 import AdminRinkUpdate from '@/components/admin/AdminRinkUpdate';
@@ -48,6 +50,11 @@ export const router = new Router({
       component: Merchandise
     },
     {
+      path: '/contact',
+      name: 'Contact',
+      component: Contact
+    },
+    {
       path: '/login',
       name: 'Login',
       component: Login
@@ -80,6 +87,14 @@ export const router = new Router({
       path: '/admin/news/update/:id',
       name: 'AdminNewsUpdate',
       component: AdminNewsUpdate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/enquiries',
+      name: 'AdminEnquiry',
+      component: AdminEnquiry,
       meta: {
         authRequired: true
       }

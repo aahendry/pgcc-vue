@@ -4,40 +4,41 @@
       <b-col md="6" sm="12">
         <div class="alert alert-info">
           <h4>To continue, please login.</h4>
+          <p>Only authorised users are permitted to access the private areas of this system.</p>
         </div>
       </b-col>
       <b-col md="6" sm="12">
-    <h2>Login</h2>
-    <div class="alert alert-danger" v-show="showError">
-      Login Failed!
-    </div>
-    <form @submit.prevent="handleSubmit">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input
-          type="text"
-          v-model="username"
-          name="username"
-          class="form-control"
-          :class="{ 'is-invalid': submitted && !username }"
-        />
-        <div v-show="submitted && !username" class="invalid-feedback">Username is required</div>
-      </div>
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          v-model="password"
-          name="password"
-          class="form-control"
-          :class="{ 'is-invalid': submitted && !password }"
-        />
-        <div v-show="submitted && !password" class="invalid-feedback">Password is required</div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-primary">Login</button>
-      </div>
-    </form>
+        <h2>Login</h2>
+        <div class="alert alert-danger" v-show="showError">
+          Login Failed!
+        </div>
+        <form @submit.prevent="handleSubmit">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              type="text"
+              v-model="username"
+              name="username"
+              class="form-control"
+              :class="{ 'is-invalid': submitted && !username }"
+            />
+            <div v-show="submitted && !username" class="invalid-feedback">Username is required</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              v-model="password"
+              name="password"
+              class="form-control"
+              :class="{ 'is-invalid': submitted && !password }"
+            />
+            <div v-show="submitted && !password" class="invalid-feedback">Password is required</div>
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary">Login</button>
+          </div>
+        </form>
       </b-col>
     </b-row>
   </b-container>
