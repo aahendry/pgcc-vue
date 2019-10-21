@@ -7,7 +7,7 @@
       </b-col>
     </b-row>
     <div class="form-wrapper">
-      <b-form @submit.prevent="createEnquiry">
+      <b-form @submit.prevent="submit">
         <b-form-group
           :label-cols="2"
           breakpoint="md"
@@ -57,11 +57,22 @@
             </b-form-text>
           </b-col>
         </b-form-group>
+
+        <b-form-group>
+          <vue-recaptcha
+            ref="recaptcha"
+            @verify="onCaptchaVerified"
+            @expired="onCaptchaExpired"
+            size="invisible"
+            sitekey="6LdYrr4UAAAAABHzauJMBHu5KTvjsitwDZ5zNd6l">
+          </vue-recaptcha>
+        </b-form-group>
         <br/>
         <b-col
           :md="2"
           offset="5">
           <b-button
+            :disabled="status==='submitting'"
             type="submit"
             variant="info">Submit</b-button>
         </b-col>
@@ -78,6 +89,7 @@
 </template>
 <script>
 import EnquiryService from '@/services/enquiry.service';
+import VueRecaptcha from 'vue-recaptcha';
 
 export default {
   name: 'Contact',
@@ -86,14 +98,30 @@ export default {
       formData: {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        recaptchaToken: ''
       },
       alertModalTitle: '',
       alertModalContent: '',
-      isSuccessful: false
+      isSuccessful: false,
+      status: ''
     };
   },
+  components: {
+    'vue-recaptcha': VueRecaptcha
+  },
   methods: {
+    submit() {
+      this.status = 'submitting';
+      this.$refs.recaptcha.execute();
+    },
+    onCaptchaVerified(recaptchaToken) {
+      const self = this;
+      self.status = 'submitting';
+      self.formData.recaptchaToken = recaptchaToken;
+      self.$refs.recaptcha.reset();
+      this.createEnquiry();
+    },
     createEnquiry() {
       EnquiryService.create(this.formData).then(() => {
         this.isSuccessful = true;
@@ -104,20 +132,34 @@ export default {
         this.formData = {
           name: '',
           email: '',
-          message: ''
+          message: '',
+          recaptchaToken: ''
         };
       }).catch((error) => {
         this.isSuccessful = false;
         this.alertModalTitle = 'Error';
         if (error.response.data.status === 503) {
           this.alertModalContent = 'Successfully stored enquiry';
+          this.$refs.alertModal.show();
+
+          this.formData = {
+            name: '',
+            email: '',
+            message: '',
+            recaptchaToken: ''
+          };
         } else {
           this.alertModalContent = 'Unable to send enquiry, please try again later';
+          this.$refs.alertModal.show();
         }
-        this.$refs.alertModal.show();
       });
     },
+    onCaptchaExpired() {
+      this.$refs.recaptcha.reset();
+    },
     onAlertModalOkClick() {
+      this.status = '';
+
       if (this.isSuccessful) {
         this.$router.push({ name: 'Contact' });
       }
