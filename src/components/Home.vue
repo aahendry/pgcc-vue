@@ -25,22 +25,28 @@
         </b-row>
       </b-col>
       <b-col lg="4" md="12">
+        <h3>Join the Club</h3>
+        <p>Curling's a very social game, great fun,
+         and we're always looking for new members.
+         If you've ever thought about having a go,
+         or have played before and are interested
+         in joining a rink, get in contact with us.</p>
         <h3>About PGCC</h3>
         <p>Port Glasgow Curling Club was formed in 1827
            and admitted to the Royal Caledonian Curling Club in 1840.</p>
         <p>Part of the Renfrewshire (12th) province of Area 3,
            the club plays the majority of games at the Waterfront Leisure Complex
             curling rink in Greenock.</p>
-            <p>
-              <a
-              href="https://en.wikipedia.org/wiki/Port_Glasgow_Curling_Club"
-              target="_blank">Wikipedia</a>
-              </p>
-            <p>
-              <a
-              href="http://rcccmembers.org/index.php?CLUB_NO=472&CATEGORY=1-Membership&SC=Club&FUNCTIONS=2"
-              target="_blank">RCCC Contact Info</a>
-              </p>
+        <p>
+          <a
+            href="https://en.wikipedia.org/wiki/Port_Glasgow_Curling_Club"
+            target="_blank">Wikipedia</a>
+          </p>
+        <p>
+          <a
+            href="http://rcccmembers.org/index.php?CLUB_NO=472&CATEGORY=1-Membership&SC=Club&FUNCTIONS=2"
+            target="_blank">RCCC Contact Info</a>
+        </p>
       </b-col>
     </b-row>
   </b-container>
