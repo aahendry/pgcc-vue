@@ -16,6 +16,9 @@ import AdminEnquiry from '@/components/admin/AdminEnquiry';
 import AdminRinks from '@/components/admin/AdminRinks';
 import AdminRinkCreate from '@/components/admin/AdminRinkCreate';
 import AdminRinkUpdate from '@/components/admin/AdminRinkUpdate';
+import AdminCompetitions from '@/components/admin/AdminCompetitions';
+import AdminCompetitionCreate from '@/components/admin/AdminCompetitionCreate';
+import AdminCompetitionUpdate from '@/components/admin/AdminCompetitionUpdate';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -119,6 +122,30 @@ export const router = new Router({
       path: '/admin/rinks/update/:id',
       name: 'AdminRinkUpdate',
       component: AdminRinkUpdate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/competitions',
+      name: 'AdminCompetitions',
+      component: AdminCompetitions,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/competitions/create',
+      name: 'AdminCompetitionCreate',
+      component: AdminCompetitionCreate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/competitions/update/:id',
+      name: 'AdminCompetitionUpdate',
+      component: AdminCompetitionUpdate,
       meta: {
         authRequired: true
       }
