@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import { AuthService } from '@/services/auth.service';
 import Home from '@/components/Home';
 import Rinks from '@/components/Rinks';
+import Fixtures from '@/components/Fixtures';
 import WinningRinks from '@/components/WinningRinks';
 import Table from '@/components/Table';
 import Merchandise from '@/components/Merchandise';
@@ -38,6 +39,11 @@ export const router = new Router({
       path: '/rinks',
       name: 'Rinks',
       component: Rinks
+    },
+    {
+      path: '/fixtures',
+      name: 'Fixtures',
+      component: Fixtures
     },
     {
       path: '/winning-rinks',

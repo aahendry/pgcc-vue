@@ -13,7 +13,7 @@
           toggle-class="nav-link-custom"
           right
         >
-          <b-dropdown-item href="#">Fixtures & Results</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'Fixtures' }">Fixtures & Results</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'Table' }">Gourdie Table</b-dropdown-item>
           <b-dropdown-item href="#">Derby Table</b-dropdown-item>
         </b-nav-item-dropdown>

@@ -87,7 +87,7 @@ export default {
       formData: {
         name: '',
         blurb: '',
-        hasLeagueTable: ''
+        hasLeagueTable: false
       },
       alertModalTitle: '',
       alertModalContent: '',
