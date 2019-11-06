@@ -23,6 +23,35 @@
           </b-col>
         </b-form-group>
 
+        <b-form-group
+          :label-cols="2"
+          breakpoint="md"
+          horizontal
+          label="Blurb:"
+          for="blurb">
+          <b-col :md="5">
+            <b-input
+              id="blurb"
+              v-model="formData.blurb"
+              maxlength="1000"
+              required />
+          </b-col>
+        </b-form-group>
+
+        <b-form-group
+          :label-cols="2"
+          breakpoint="md"
+          horizontal
+          label="Has League Table?:"
+          for="hasLeagueTable">
+          <b-col :md="5">
+            <b-form-checkbox
+              id="hasLeagueTable"
+              v-model="formData.hasLeagueTable"
+              switch/>
+          </b-col>
+        </b-form-group>
+
         <br/>
 
         <b-col
@@ -56,7 +85,9 @@ export default {
   data() {
     return {
       formData: {
-        name: ''
+        name: '',
+        blurb: '',
+        hasLeagueTable: ''
       },
       alertModalTitle: '',
       alertModalContent: '',
@@ -72,7 +103,9 @@ export default {
         this.$refs.alertModal.show();
 
         this.formData = {
-          name: ''
+          name: '',
+          blurb: '',
+          hasLeagueTable: ''
         };
       }).catch((error) => {
         this.isSuccessful = false;

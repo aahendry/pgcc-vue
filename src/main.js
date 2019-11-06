@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
+import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 import Axios from 'axios';
 import BootstrapVue from 'bootstrap-vue';
 import Vue from 'vue';
@@ -7,6 +8,7 @@ import App from './App';
 import EventBus from './EventBus';
 import { router } from './router';
 import ShortDateFilter from './filters/short-date';
+import ShortDateTimeFilter from './filters/short-date-time';
 
 Vue.config.productionTip = false;
 
@@ -25,3 +27,4 @@ new Vue({
 
 /* filters */
 Vue.filter('short-date', ShortDateFilter);
+Vue.filter('short-date-time', ShortDateTimeFilter);

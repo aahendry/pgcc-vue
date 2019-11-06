@@ -22,6 +22,7 @@
             <thead>
               <tr>
                 <th>Name</th>
+                <th>Has League Table?</th>
                 <th>Update</th>
                 <th>Delete</th>
               </tr>
@@ -44,6 +45,7 @@
       @ok="onDeleteConfirm"
       @hide="onDeleteModalHide">
       <p class="my-4">Are you sure you want to delete this competiton?</p>
+      <p class="my-4">This will delete all associated rinks and fixtures.</p>
     </b-modal>
     <b-modal
       ref="alertModal"

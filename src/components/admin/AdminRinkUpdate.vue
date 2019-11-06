@@ -177,8 +177,8 @@ export default {
       this.formData.second = response.data.second;
       this.formData.lead = response.data.lead;
       this.formData.wasWinningRink = response.data.wasWinningRink;
-      this.formData.seasonId = response.data.seasonId;
-      this.formData.competitionId = response.data.competitionId;
+      this.formData.seasonId = response.data.season.id;
+      this.formData.competitionId = response.data.competition.id;
       this.formData.id = response.data.id;
     });
   },

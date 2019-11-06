@@ -19,6 +19,8 @@ import AdminRinkUpdate from '@/components/admin/AdminRinkUpdate';
 import AdminCompetitions from '@/components/admin/AdminCompetitions';
 import AdminCompetitionCreate from '@/components/admin/AdminCompetitionCreate';
 import AdminCompetitionUpdate from '@/components/admin/AdminCompetitionUpdate';
+import AdminFixtures from '@/components/admin/AdminFixtures';
+import AdminFixtureCreate from '@/components/admin/AdminFixtureCreate';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -146,6 +148,22 @@ export const router = new Router({
       path: '/admin/competitions/update/:id',
       name: 'AdminCompetitionUpdate',
       component: AdminCompetitionUpdate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/fixtures',
+      name: 'AdminFixtures',
+      component: AdminFixtures,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/fixtures/create',
+      name: 'AdminFixtureCreate',
+      component: AdminFixtureCreate,
       meta: {
         authRequired: true
       }

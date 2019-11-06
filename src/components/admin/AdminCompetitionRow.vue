@@ -1,6 +1,7 @@
 <template>
   <tr>
     <td>{{ competition.name }}</td>
+    <td>{{ competition.hasLeagueTable }}</td>
     <td>
       <b-button
       variant="success"

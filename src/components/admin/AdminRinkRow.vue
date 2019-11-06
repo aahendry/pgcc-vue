@@ -1,7 +1,7 @@
 <template>
   <tr>
-    <td>{{ rink.season }}</td>
-    <td>{{ rink.competition }}</td>
+    <td>{{ rink.season.name }}</td>
+    <td>{{ rink.competition.name }}</td>
     <td>{{ rink.skip }}</td>
     <td>
       <b-button

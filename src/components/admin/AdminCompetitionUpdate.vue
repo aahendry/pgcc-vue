@@ -23,6 +23,21 @@
           </b-col>
         </b-form-group>
 
+        <b-form-group
+          :label-cols="2"
+          breakpoint="md"
+          horizontal
+          label="Blurb:"
+          for="blurb">
+          <b-col :md="5">
+            <b-input
+              id="blurb"
+              v-model="formData.blurb"
+              maxlength="1000"
+              required />
+          </b-col>
+        </b-form-group>
+
         <br/>
 
         <b-col
@@ -56,7 +71,7 @@ export default {
     return {
       formData: {
         name: '',
-        id: 0
+        blurb: ''
       },
       alertModalTitle: '',
       alertModalContent: '',
@@ -66,7 +81,7 @@ export default {
   created() {
     CompetitionService.get(this.$router.currentRoute.params.id).then((response) => {
       this.formData.name = response.data.name;
-      this.formData.id = response.data.id;
+      this.formData.blurb = response.data.blurb;
     });
   },
   methods: {
