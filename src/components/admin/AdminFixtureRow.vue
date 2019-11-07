@@ -13,11 +13,16 @@
       </td>
       <td v-show="status === 'view'">
         <b-button
+        variant="info"
+        @click="onCopyClick">Copy</b-button>
+      </td>
+      <td v-show="status === 'view'">
+        <b-button
         variant="danger"
         @click="onDeleteClick">Delete</b-button>
       </td>
 
-      <td colspan="6" v-show="status === 'edit'">
+      <td colspan="7" v-show="status === 'edit'">
         <div>
 
           <b-form-group
@@ -199,12 +204,12 @@
       </td>
       <td v-show="status === 'edit'">
         <b-button
-        variant="info"
+        variant="success"
         @click="onSaveClick">Save</b-button>
       </td>
       <td v-show="status === 'edit'">
         <b-button
-        variant="outline-danger"
+        variant="secondary"
         @click="onCancelClick">Cancel</b-button>
       </td>
     </tr>
@@ -310,6 +315,9 @@ export default {
     },
     onDeleteClick() {
       this.$emit('delete', this.fixture.id);
+    },
+    onCopyClick() {
+      this.$emit('copy', this.fixture.id);
     }
   }
 };

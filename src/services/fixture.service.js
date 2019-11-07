@@ -21,6 +21,13 @@ export default {
 
     return Axios.post(RESOURCE_NAME, data, requestOptions);
   },
+  copy(id) {
+    const requestOptions = {
+      headers: authHeader()
+    };
+
+    return Axios.post(`${RESOURCE_NAME}/${id}`, null, requestOptions);
+  },
   update(id, data) {
     const requestOptions = {
       headers: authHeader()

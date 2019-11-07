@@ -45,6 +45,7 @@
                 <th>Ends</th>
                 <th></th>
                 <th></th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
@@ -54,7 +55,8 @@
               :fixture="fixture"
               :seasons="seasons"
               @update="updateFixture"
-              @delete="deleteFixture"/>
+              @delete="deleteFixture"
+              @copy="copyFixture"/>
             </tbody>
           </table>
         </div>
@@ -113,6 +115,19 @@ export default {
     deleteFixture(fixtureId) {
       this.selectedFixtureId = fixtureId;
       this.$refs.deleteConfirmModal.show();
+    },
+    copyFixture(fixtureId) {
+      this.selectedFixtureId = fixtureId;
+      FixtureService.copy(this.selectedFixtureId).then(() => {
+        this.alertModalTitle = 'Success';
+        this.alertModalContent = 'Successfully copied fixture';
+        this.$refs.alertModal.show();
+        this.fetchFixtures();
+      }).catch((error) => {
+        this.alertModalTitle = 'Error';
+        this.alertModalContent = error.response.data;
+        this.$refs.alertModal.show();
+      });
     },
     fetchFixtures() {
       FixtureService.getAll(this.selectedSeasonId).then((response) => {
