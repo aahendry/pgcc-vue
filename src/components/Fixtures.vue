@@ -2,7 +2,7 @@
   <b-container>
     <b-row>
       <b-col>
-        <h3>Fixtures</h3>
+        <h3>Fixtures & Results</h3>
       </b-col>
     </b-row>
 

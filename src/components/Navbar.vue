@@ -6,7 +6,6 @@
 
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
-        <b-nav-item :to="{ name: 'Rinks' }">Rinks</b-nav-item>
         <b-nav-item-dropdown
           id="nav-dropdown-competitions"
           text="Competitions"
@@ -14,8 +13,8 @@
           right
         >
           <b-dropdown-item :to="{ name: 'Fixtures' }">Fixtures & Results</b-dropdown-item>
-          <b-dropdown-item :to="{ name: 'Table' }">Gourdie Table</b-dropdown-item>
-          <b-dropdown-item href="#">Derby Table</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'Tables' }">League Tables</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'Rinks' }">Rinks</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown
           id="nav-dropdown-archive"

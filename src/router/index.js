@@ -5,7 +5,7 @@ import Home from '@/components/Home';
 import Rinks from '@/components/Rinks';
 import Fixtures from '@/components/Fixtures';
 import WinningRinks from '@/components/WinningRinks';
-import Table from '@/components/Table';
+import Tables from '@/components/Tables';
 import Merchandise from '@/components/Merchandise';
 import Contact from '@/components/Contact';
 import Login from '@/components/Login';
@@ -51,9 +51,9 @@ export const router = new Router({
       component: WinningRinks
     },
     {
-      path: '/table',
-      name: 'Table',
-      component: Table
+      path: '/tables',
+      name: 'Tables',
+      component: Tables
     },
     {
       path: '/merchandise',

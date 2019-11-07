@@ -14,6 +14,9 @@ export default {
 
     return Axios.get(`${RESOURCE_NAME}/${id}`, requestOptions);
   },
+  getTable(id) {
+    return Axios.get(`${RESOURCE_NAME}/table/${id}`);
+  },
   create(data) {
     const requestOptions = {
       headers: authHeader()
