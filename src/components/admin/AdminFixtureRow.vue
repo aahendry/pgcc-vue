@@ -180,6 +180,21 @@
             </b-col>
           </b-form-group>
 
+          <b-form-group
+            :label-cols="2"
+            breakpoint="md"
+            horizontal
+            label="Man of the Match:"
+            for="manOfTheMatch">
+            <b-col :md="5">
+              <b-input
+                id="manOfTheMatch"
+                v-model="formData.manOfTheMatch"
+                maxlength="255"
+                required />
+            </b-col>
+          </b-form-group>
+
         </div>
       </td>
       <td v-show="status === 'edit'">
@@ -221,7 +236,8 @@ export default {
         shots1: null,
         shots2: null,
         ends1: null,
-        ends2: null
+        ends2: null,
+        manOfTheMatch: null
       },
       status: 'view',
       isLeagueTableSeason: false,
@@ -253,6 +269,7 @@ export default {
       this.formData.shots2 = this.fixture.shots2;
       this.formData.ends1 = this.fixture.ends1;
       this.formData.ends2 = this.fixture.ends2;
+      this.formData.manOfTheMatch = this.fixture.manOfTheMatch;
 
       if (this.isLeagueTableSeason) {
         this.formData.team1Id = this.fixture.team1.id;
@@ -281,6 +298,7 @@ export default {
       this.formData.shots2 = this.fixture.shots2;
       this.formData.ends1 = this.fixture.ends1;
       this.formData.ends2 = this.fixture.ends2;
+      this.formData.manOfTheMatch = this.fixture.manOfTheMatch;
 
       if (this.isLeagueTableSeason) {
         this.formData.team1Id = this.fixture.team1.id;
