@@ -59,7 +59,7 @@ export default {
     };
   },
   created() {
-    CompetitionService.getAll().then((competitions) => {
+    CompetitionService.getAllLeagues().then((competitions) => {
       competitions.data.forEach((competition) => {
         CompetitionService.getTable(competition.id).then((table) => {
           this.tables.push({ competition, table: table.data });

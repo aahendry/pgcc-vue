@@ -2,11 +2,11 @@
   <b-container fluid>
     <b-row>
       <b-col>
-        <h3>Create Competition</h3>
+        <h3>Create Season</h3>
       </b-col>
     </b-row>
     <div class="form-wrapper">
-      <b-form @submit.prevent="createCompetition">
+      <b-form @submit.prevent="createSeason">
 
         <b-form-group
           :label-cols="2"
@@ -23,34 +23,6 @@
           </b-col>
         </b-form-group>
 
-        <b-form-group
-          :label-cols="2"
-          breakpoint="md"
-          horizontal
-          label="Blurb:"
-          for="blurb">
-          <b-col :md="5">
-            <b-input
-              id="blurb"
-              v-model="formData.blurb"
-              maxlength="1000" />
-          </b-col>
-        </b-form-group>
-
-        <b-form-group
-          :label-cols="2"
-          breakpoint="md"
-          horizontal
-          label="Has League Table?:"
-          for="hasLeagueTable">
-          <b-col :md="5">
-            <b-form-checkbox
-              id="hasLeagueTable"
-              v-model="formData.hasLeagueTable"
-              switch/>
-          </b-col>
-        </b-form-group>
-
         <br/>
 
         <b-col
@@ -60,7 +32,7 @@
             type="submit"
             variant="info">Save</b-button>
           <b-button
-            :to="{ name: 'AdminCompetitions' }"
+            :to="{ name: 'AdminSeasons' }"
             variant="danger">Cancel</b-button>
         </b-col>
 
@@ -77,16 +49,14 @@
 </template>
 
 <script>
-import CompetitionService from '@/services/competition.service';
+import SeasonService from '@/services/season.service';
 
 export default {
-  name: 'AdminCompetitionCreate',
+  name: 'AdminSeasonCreate',
   data() {
     return {
       formData: {
-        name: '',
-        blurb: '',
-        hasLeagueTable: false
+        name: ''
       },
       alertModalTitle: '',
       alertModalContent: '',
@@ -94,17 +64,15 @@ export default {
     };
   },
   methods: {
-    createCompetition() {
-      CompetitionService.create(this.formData).then(() => {
+    createSeason() {
+      SeasonService.create(this.formData).then(() => {
         this.isSuccessful = true;
         this.alertModalTitle = 'Success';
-        this.alertModalContent = 'Successfully created competition';
+        this.alertModalContent = 'Successfully created season';
         this.$refs.alertModal.show();
 
         this.formData = {
-          name: '',
-          blurb: '',
-          hasLeagueTable: ''
+          name: ''
         };
       }).catch((error) => {
         this.isSuccessful = false;
@@ -115,7 +83,7 @@ export default {
     },
     onAlertModalOkClick() {
       if (this.isSuccessful) {
-        this.$router.push({ name: 'AdminCompetitions' });
+        this.$router.push({ name: 'AdminSeasons' });
       }
     }
   }

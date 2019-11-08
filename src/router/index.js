@@ -20,6 +20,9 @@ import AdminRinkUpdate from '@/components/admin/AdminRinkUpdate';
 import AdminCompetitions from '@/components/admin/AdminCompetitions';
 import AdminCompetitionCreate from '@/components/admin/AdminCompetitionCreate';
 import AdminCompetitionUpdate from '@/components/admin/AdminCompetitionUpdate';
+import AdminSeasons from '@/components/admin/AdminSeasons';
+import AdminSeasonCreate from '@/components/admin/AdminSeasonCreate';
+import AdminSeasonUpdate from '@/components/admin/AdminSeasonUpdate';
 import AdminFixtures from '@/components/admin/AdminFixtures';
 import AdminFixtureCreate from '@/components/admin/AdminFixtureCreate';
 import NotFound from '@/components/NotFound';
@@ -154,6 +157,30 @@ export const router = new Router({
       path: '/admin/competitions/update/:id',
       name: 'AdminCompetitionUpdate',
       component: AdminCompetitionUpdate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/seasons',
+      name: 'AdminSeasons',
+      component: AdminSeasons,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/seasons/create',
+      name: 'AdminSeasonCreate',
+      component: AdminSeasonCreate,
+      meta: {
+        authRequired: true
+      }
+    },
+    {
+      path: '/admin/seasons/update/:id',
+      name: 'AdminSeasonUpdate',
+      component: AdminSeasonUpdate,
       meta: {
         authRequired: true
       }

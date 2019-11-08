@@ -42,9 +42,10 @@
           <b-dropdown-item :to="{ name: 'Admin' }">Admin Page</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'AdminNews' }">News</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'AdminEnquiry' }">Enquiries</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'AdminFixtures' }">Fixtures</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'AdminRinks' }">Rinks</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'AdminCompetitions' }">Competitions</b-dropdown-item>
-          <b-dropdown-item :to="{ name: 'AdminFixtures' }">Fixtures</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'AdminSeasons' }">Seasons</b-dropdown-item>
           <b-dropdown-item @click.prevent="logout">Logout</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>

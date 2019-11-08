@@ -7,6 +7,9 @@ export default {
   getAll() {
     return Axios.get(RESOURCE_NAME);
   },
+  getAllLeagues() {
+    return Axios.get(`${RESOURCE_NAME}/leagues`);
+  },
   get(id) {
     const requestOptions = {
       headers: authHeader()
