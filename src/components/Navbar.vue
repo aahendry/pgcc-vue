@@ -22,9 +22,11 @@
           toggle-class="nav-link-custom"
           right
         >
-          <b-dropdown-item href="#">Old Results</b-dropdown-item>
+          <!-- <b-dropdown-item href="#">Old Results</b-dropdown-item> -->
+          <b-dropdown-item :to="{ name: 'UnderConstruction' }">Old Results</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
-          <b-dropdown-item href="#">Photo Gallery</b-dropdown-item>
+          <!-- <b-dropdown-item href="#">Photo Gallery</b-dropdown-item> -->
+          <b-dropdown-item :to="{ name: 'UnderConstruction' }">Photo Gallery</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item :to="{ name: 'Merchandise' }">Merchandise</b-nav-item>
         <b-nav-item href="http://pgcc-reserves.net46.net" target="_blank">Reserve System</b-nav-item>

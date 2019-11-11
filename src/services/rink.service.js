@@ -9,8 +9,8 @@ export default {
     return Axios.get(`${RESOURCE_NAME}/?competitionId=${competition || ''}&seasonId=${season || ''}`);
   },
 
-  getAllWinning(competition) {
-    return Axios.get(`${RESOURCE_NAME}/winning/?competition=${competition}`)
+  getAllWinning(competitionId) {
+    return Axios.get(`${RESOURCE_NAME}/winning/${competitionId}`)
       .then((x) => {
         AuthService.handleResponse(x);
         return x;

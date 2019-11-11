@@ -25,6 +25,7 @@ import AdminSeasonCreate from '@/components/admin/AdminSeasonCreate';
 import AdminSeasonUpdate from '@/components/admin/AdminSeasonUpdate';
 import AdminFixtures from '@/components/admin/AdminFixtures';
 import AdminFixtureCreate from '@/components/admin/AdminFixtureCreate';
+import UnderConstruction from '@/components/UnderConstruction';
 import NotFound from '@/components/NotFound';
 
 Vue.use(Router);
@@ -200,6 +201,11 @@ export const router = new Router({
       meta: {
         authRequired: true
       }
+    },
+    {
+      path: '/underconstruction',
+      name: 'UnderConstruction',
+      component: UnderConstruction
     },
     {
       path: '*',

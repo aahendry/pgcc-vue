@@ -34,14 +34,19 @@
         <h3>About PGCC</h3>
         <p>Port Glasgow Curling Club was formed in 1827
            and admitted to the Royal Caledonian Curling Club in 1840.</p>
-        <p>Part of the Renfrewshire (12th) province of Area 3,
+        <p>Part of the Renfrewshire (12th) province of Area 5,
            the club plays the majority of games at the Waterfront Leisure Complex
             curling rink in Greenock.</p>
         <p>
           <a
             href="https://en.wikipedia.org/wiki/Port_Glasgow_Curling_Club"
             target="_blank">Wikipedia</a>
-          </p>
+        </p>
+        <p>
+          <a
+            href="http://www.royalcaledoniancurlingclub.org/wp-content/uploads/2011/08/Child-Protection-Policy-1.pdf"
+            target="_blank">RCCC Child Protection Policy</a>
+        </p>
         <p>
           <a
             href="http://rcccmembers.org/index.php?CLUB_NO=472&CATEGORY=1-Membership&SC=Club&FUNCTIONS=2"

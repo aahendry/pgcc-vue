@@ -251,7 +251,6 @@ export default {
   },
   created() {
     this.isLeagueTableSeason = this.fixture.competition.hasLeagueTable;
-    this.rinks = this.fetchRinks();
   },
   methods: {
     fetchRinks() {
@@ -265,6 +264,7 @@ export default {
     },
     onUpdateClick() {
       this.status = 'edit';
+      this.rinks = this.fetchRinks();
 
       this.formData.id = this.fixture.id;
       this.formData.when = this.fixture.when;
