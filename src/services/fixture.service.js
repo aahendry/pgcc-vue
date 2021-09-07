@@ -15,11 +15,13 @@ export default {
     return Axios.get(`${RESOURCE_NAME}/${id}`, requestOptions);
   },
   create(data) {
+    const newData = data;
+    newData.when = new Date(new Date(newData.when).toUTCString()).toISOString();
     const requestOptions = {
       headers: authHeader()
     };
 
-    return Axios.post(RESOURCE_NAME, data, requestOptions);
+    return Axios.post(RESOURCE_NAME, newData, requestOptions);
   },
   copy(id) {
     const requestOptions = {
@@ -29,11 +31,13 @@ export default {
     return Axios.post(`${RESOURCE_NAME}/${id}`, null, requestOptions);
   },
   update(id, data) {
+    const newData = data;
+    newData.when = new Date(new Date(newData.when).toUTCString()).toISOString();
     const requestOptions = {
       headers: authHeader()
     };
 
-    return Axios.put(`${RESOURCE_NAME}/${id}`, data, requestOptions);
+    return Axios.put(`${RESOURCE_NAME}/${id}`, newData, requestOptions);
   },
   delete(id) {
     const requestOptions = {

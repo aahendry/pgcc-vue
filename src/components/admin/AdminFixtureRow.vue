@@ -33,6 +33,7 @@
             for="when">
             <datepicker
               id="when"
+              use-utc
               minute-interval="5"
               v-model="formData.when"/>
           </b-form-group>
@@ -267,7 +268,9 @@ export default {
       this.rinks = this.fetchRinks();
 
       this.formData.id = this.fixture.id;
-      this.formData.when = this.fixture.when;
+      const date1 = new Date(this.fixture.when);
+      const date = new Date(Date.UTC(date1.getUTCFullYear(), date1.getMonth(), date1.getDate(), date1.getHours(), date1.getMinutes(), date1.getSeconds()));
+      this.formData.when = date;
       this.formData.round = this.fixture.round;
       this.formData.isFinal = this.fixture.isFinal;
       this.formData.shots1 = this.fixture.shots1;

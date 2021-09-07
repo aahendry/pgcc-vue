@@ -34,8 +34,8 @@
         </table>
         </b-col>
       </b-row>
-      </div>
       <br/>
+      </div>
     </div>
 
   </b-container>

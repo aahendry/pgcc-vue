@@ -46,6 +46,7 @@
           for="when">
           <datepicker
             id="when"
+            use-utc
             minute-interval="5"
             v-model="formData.when"/>
         </b-form-group>
@@ -201,7 +202,7 @@ export default {
     };
   },
   created() {
-    this.formData.when = new Date();
+    this.formData.when = new Date(new Date().toUTCString());
     this.formData.when.setHours(17, 40);
     SeasonService.getAll().then((response) => {
       this.seasons = [];

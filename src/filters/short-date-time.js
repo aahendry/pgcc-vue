@@ -1,5 +1,6 @@
 export default (value) => {
-  const date = new Date(value);
+  const date1 = new Date(value);
+  const date = new Date(Date.UTC(date1.getUTCFullYear(), date1.getMonth(), date1.getDate(), date1.getHours(), date1.getMinutes(), date1.getSeconds()));
   let hours = date.getHours();
   const minutes = date.getMinutes();
   let amPm = 'AM';
