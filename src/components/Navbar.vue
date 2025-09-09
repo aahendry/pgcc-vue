@@ -23,7 +23,7 @@
           right
         >
           <b-dropdown-item href="https://ehive.com/collections/206897/port-glasgow-curling-club" target="_blank">Virtual Museum</b-dropdown-item>
-          <b-dropdown-item :to="{ name: 'UnderConstruction' }">Photo Gallery</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'PhotoGallery' }">Photo Gallery</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item :to="{ name: 'Merchandise' }">Merchandise</b-nav-item>
