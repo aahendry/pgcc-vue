@@ -17,16 +17,14 @@
           <b-dropdown-item :to="{ name: 'Rinks' }">Rinks</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item-dropdown
-          id="nav-dropdown-archive"
-          text="Archive"
+          id="nav-dropdown-about"
+          text="About"
           toggle-class="nav-link-custom"
           right
         >
-          <!-- <b-dropdown-item href="#">Old Results</b-dropdown-item> -->
-          <b-dropdown-item :to="{ name: 'UnderConstruction' }">Old Results</b-dropdown-item>
+          <b-dropdown-item href="https://ehive.com/collections/206897/port-glasgow-curling-club" target="_blank">Virtual Museum</b-dropdown-item>
+          <b-dropdown-item :to="{ name: 'PhotoGallery' }">Photo Gallery</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
-          <!-- <b-dropdown-item href="#">Photo Gallery</b-dropdown-item> -->
-          <b-dropdown-item :to="{ name: 'UnderConstruction' }">Photo Gallery</b-dropdown-item>
         </b-nav-item-dropdown>
         <b-nav-item :to="{ name: 'Merchandise' }">Merchandise</b-nav-item>
         <b-nav-item href="https://reserves.portglasgowcurlingclub.com/" target="_blank">Reserve System</b-nav-item>

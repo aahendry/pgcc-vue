@@ -49,7 +49,7 @@
         </p>
         <p>
           <a
-            href="http://rcccmembers.org/index.php?CLUB_NO=472&CATEGORY=1-Membership&SC=Club&FUNCTIONS=2"
+            href="https://rcccmembers.org/club/port-glasgow"
             target="_blank">RCCC Contact Info</a>
         </p>
       </b-col>

@@ -213,6 +213,12 @@
         variant="secondary"
         @click="onCancelClick">Cancel</b-button>
       </td>
+    <b-modal
+      ref="alertModal"
+      :title="alertModalTitle"
+      :ok-only="true">
+      <p class="my-4">{{ alertModalContent }}</p>
+    </b-modal>
     </tr>
 </template>
 
@@ -247,7 +253,9 @@ export default {
       },
       status: 'view',
       isLeagueTableSeason: false,
-      rinks: []
+      rinks: [],
+      alertModalTitle: '',
+      alertModalContent: ''
     };
   },
   created() {
@@ -291,8 +299,10 @@ export default {
       FixtureService.update(this.fixture.id, this.formData).then(() => {
         this.status = 'view';
         this.$emit('update');
-      }).catch(() => {
-        // pop a toast mesage or something
+      }).catch((error) => {
+        this.alertModalTitle = 'Error';
+        this.alertModalContent = error.response.data;
+        this.$refs.alertModal.show();
       });
     },
     onCancelClick() {
