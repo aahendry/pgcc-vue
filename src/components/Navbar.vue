@@ -26,6 +26,7 @@
           <b-dropdown-item :to="{ name: 'PhotoGallery' }">Photo Gallery</b-dropdown-item>
           <b-dropdown-item :to="{ name: 'WinningRinks' }">Winning Rinks</b-dropdown-item>
         </b-nav-item-dropdown>
+        <b-nav-item :to="{ name: 'Bicentenary' }">Bicentenary</b-nav-item>
         <b-nav-item :to="{ name: 'Merchandise' }">Merchandise</b-nav-item>
         <b-nav-item href="https://reserves.portglasgowcurlingclub.com/" target="_blank">Reserve System</b-nav-item>
         <b-nav-item :to="{ name: 'Contact' }">Contact Us</b-nav-item>
