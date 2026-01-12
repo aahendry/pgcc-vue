@@ -7,6 +7,7 @@ import Fixtures from '@/components/Fixtures';
 import WinningRinks from '@/components/WinningRinks';
 import Tables from '@/components/Tables';
 import Merchandise from '@/components/Merchandise';
+import Bicentenary from '@/components/Bicentenary';
 import Contact from '@/components/Contact';
 import Login from '@/components/Login';
 import Admin from '@/components/admin/Admin';
@@ -59,6 +60,11 @@ export const router = new Router({
       path: '/tables',
       name: 'Tables',
       component: Tables
+    },
+    {
+      path: '/bicentenary',
+      name: 'Bicentenary',
+      component: Bicentenary
     },
     {
       path: '/merchandise',

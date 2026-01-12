@@ -25,6 +25,8 @@
         </b-row>
       </b-col>
       <b-col lg="4" md="12">
+        <h3>Bicentenary</h3>
+        <p>Port Glasgow Curling Club celebrates its bicentenary in 2027. <b-link :to="{ name: 'Bicentenary' }">Click here</b-link> to find out more.</p>
         <h3>Join the Club</h3>
         <p>Curling's a very social game, great fun,
          and we're always looking for new members.

@@ -40,8 +40,38 @@ export default {
   components: { FsLightbox },
   data() {
     return {
-      toggler1: false,
       albums: [
+        {
+          name: '185th Anniversary Dinner',
+          toggle: false,
+          sources: [
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0017.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0018.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0020.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0022.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0028.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0030.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0040.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0041.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0048.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0051.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0064.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0065.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0066.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0067.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0070.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0071.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0074.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0077.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0081.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0083.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0086.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0087.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0088.jpg',
+            'https://pgcc.s3.nl-ams.scw.cloud/photos/185-dinner/IMG-20250910-WA0089.jpg'
+          ],
+          thumbUrlIndex: 7
+        },
         {
           name: 'AGM 2013',
           toggle: false,
