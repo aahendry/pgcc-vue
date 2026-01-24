@@ -63,6 +63,8 @@ export default {
       });
     });
 
+    this.competitions.sort((a, b) => a.competition.name >= b.competition.name);
+
     this.tableHeader = ['Skip', 'Third', 'Second', 'Lead'];
   }
 };
