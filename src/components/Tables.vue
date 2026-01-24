@@ -40,8 +40,8 @@
         </table>
         </b-col>
       </b-row>
-      </div>
       <br/>
+      </div>
     </div>
 
   </b-container>
@@ -66,6 +66,8 @@ export default {
         });
       });
     });
+
+    this.tables.sort((a, b) => a.competition.name >= b.competition.name);
 
     this.tableHeader = ['', 'Played', 'Won', 'Drawn', 'Lost', 'For', 'Against', 'Shots', 'Ends Won', 'Points'];
   }
