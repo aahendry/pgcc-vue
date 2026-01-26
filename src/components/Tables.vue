@@ -63,11 +63,10 @@ export default {
       competitions.data.forEach((competition) => {
         CompetitionService.getTable(competition.id).then((table) => {
           this.tables.push({ competition, table: table.data });
+          this.tables.sort((a, b) => a.competition.name >= b.competition.name);
         });
       });
     });
-
-    this.tables.sort((a, b) => a.competition.name >= b.competition.name);
 
     this.tableHeader = ['', 'Played', 'Won', 'Drawn', 'Lost', 'For', 'Against', 'Shots', 'Ends Won', 'Points'];
   }

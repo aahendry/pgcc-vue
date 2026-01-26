@@ -59,11 +59,10 @@ export default {
       competitions.data.forEach((competition) => {
         RinkService.getAllWinning(competition.id).then((table) => {
           this.tables.push({ competition, table: table.data });
+          this.tables.sort((a, b) => a.competition.name >= b.competition.name);
         });
       });
     });
-
-    this.tables.sort((a, b) => a.competition.name >= b.competition.name);
 
     this.tableHeader = ['Season', 'Skip', 'Third', 'Second', 'Lead'];
   }

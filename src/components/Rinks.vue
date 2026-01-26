@@ -59,11 +59,10 @@ export default {
       response.data.forEach((competition) => {
         RinkService.getAll(competition.id, null).then((rinks) => {
           this.competitions.push({ competition, rinks: rinks.data });
+          this.competitions.sort((a, b) => a.competition.name >= b.competition.name);
         });
       });
     });
-
-    this.competitions.sort((a, b) => a.competition.name >= b.competition.name);
 
     this.tableHeader = ['Skip', 'Third', 'Second', 'Lead'];
   }
